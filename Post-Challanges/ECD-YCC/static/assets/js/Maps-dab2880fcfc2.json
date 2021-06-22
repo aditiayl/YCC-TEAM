@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "strange-firefly-276014",
+  "private_key_id": "dab2880fcfc214dc388257752a23bb04061c7a1f",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCnMG9XKcsQQixL\nzbfX+zUHoqvkr+7PgEBZYjF7LuC6Y1Kp4VvyzmeDRUH5jaeJOWfqB6jokBOXnxHT\nvx5Sf2N6h3QIH2O8XszAhmTNB+IFfoeL/4nw+EXSzcA426Nh0D1EbCBzCCoa1lWz\nzrjPzs7IMFLUCCgz73g4B7bpMuJNvKu9LxY7jUXxXuLAfIeMtnA9b7vjW0NyO0Yq\nE7Drdos9mLfH5enku+yyQ8DiJfpCz06kT6NYfxdcC5dpwKWJmUAEfTwBLrSmHjQW\n1YmPQgGO+OPnplZd2g+uziX1EqwmMajOF4RshQtZb9kagqnHgoJvl8Jeh2RQgscx\nc/wIlsLBAgMBAAECggEAH1HGecidfrU2wRiPiQlJHN4PX27JyNtYsqXfaRkWBjSX\nBrXt2KVr5L5zpoEv0lgLrF60+KQM14l3+HfEAWZVx11aki73KxGDP8mtVm9Umvzh\n/YroV1jbE6txh/U1PRyabZfn2ES+RnrCYUWnf15ZhEzxJ0FD7r68gZqIXFUo6bDR\ntkq6ZVjtVwg61LyIDuT/g8xe0bYGrl/SZLAAmMqIFCpMrQ5Zq5v2PwGefqXeyiKO\nIoNoTEOxh6E36hFLyjBsoUDMO65k2EUacea5kVAcWfMWaFLCalxe0GpR13Xf4C9T\nLns5XAl3ced5nvX0baHUOoiygw35WBMiRvfIpU/EVQKBgQDddh8aTGljsGXuBsau\nBqPdoF66q9aiiLHwMJtam5eNQhKhRuvhWkK3xhwCMK3LtODHpftUjT/04OzA/E8H\nKmAk3FBHIPr/I4HZ8H/TAfzl5hURR28s6hN67Yl8x4mshi2mNaOWUjT8C6R0mWpp\n7vYiDoT7j8tXDPR3OFO765j5LwKBgQDBQ3zRNPIohqCL3IaPyDwZ8n/cqV+Lp9zv\ntKZ0sppEQpRanrCz3J3+H8RKkBlBIilTB2N98ngrUMEjYuNpNckidjyQhqaCWK2v\npJG8eReIVs6r38+DF61IsPrhkPahn318esBLHjyNmMJU9d/w3fxAF70IPw3d4xr+\nVd/Yv3YnDwKBgEH99ey3QlxjbyxLtp6a+e+L306O8CmExElHorOQU8vTGYwXfyiq\n5eCvVx9L9C4UmzrC+i7K3HkTIVmslbwT44x4Xi+j40duBD62TNDK8dpsAnEgsT9Y\nDS//Yo3dQ+g2H5o8t5+OpZ1JttrL8Iram1uwqe3wfm5VPO/dyA3iebYfAoGAW2tq\nKqhJ+IOehCpf+Lm2PGvqsd3o1W4lY7pnlwI5WRrJhIhWe+5bSi+Ksd6yI45eT+lJ\n1fURhSPhCLUpb8ZCi6u0gIVBVJ1QI6rMSYRabmLpxoHLbm6PyLf3JSZmlBOWz4Bd\nX+tAp5ZgLsJUGWNYhJT2FWWGULSyOycyCRygbl8CgYB/Jx6EvxkWWOSmhk4d+r3g\nlK1W50NW3npx9bIagWoz8EI6HYg+S8TYmA2fVTK6crV6GpToGKPTmggJZ/xZkI/q\nLXPZ+MlMK+60qxivWI63QKz13XY0T6fsZKMDZJ0CXrFwoEi1QuTUlp3SJzG6koDF\njfkOCB+gj6J9N/AiVe7POQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "panoptes-id@strange-firefly-276014.iam.gserviceaccount.com",
+  "client_id": "114983736090456464091",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/panoptes-id%40strange-firefly-276014.iam.gserviceaccount.com"
+}
