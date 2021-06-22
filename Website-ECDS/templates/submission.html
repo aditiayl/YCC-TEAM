@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ECDS - Eye Check</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link  rel="icon" media="all" href="{{ url_for('static', filename='assets/img/logo.png')}}">
+  <link rel="panoptes-icon" media="all" href="{{ url_for('static', filename='assets/img/panoptesapple-touch-icon.png')}}">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>        
+    <link rel="stylesheet" href="https://unpkg.com/dropzone/dist/dropzone.css" />
+ -->
+
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/dropzone"></script>
+    <script src="https://unpkg.com/cropperjs"></script> 
+  <link href="{{font_url}}" rel="stylesheet"/>
+
+  <!-- Vendor CSS Files -->
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <!--<link href="assets/css/style.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+<style type="text/css">
+  
+  img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+ <style>
+   
+ </style> 
+
+</head>
+
+<body>
+<!--   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+   <ul class=flashes>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+   </ul>
+   {% endif %}
+   {% endwith %} -->
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-envelope"></i> <a href="mailto:ecds.id@gmail.com">ecds.id@gmail.com</a>
+        <i class="icofont-phone"></i> +62 821-1517-8793
+        <i class="icofont-google-map"></i> Electronic Engineering Polytechnic Institute of Surabaya
+      </div>
+      <div class="social-links">
+        <a href="https://web.facebook.com/Early-Cataract-Detection-System-ECDS-100939092238938"target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/ycc.community/" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/"><img src="/static/assets/img/logoblack-ecds.png"></a></h1> 
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Upload Section ======= -->
+
+    <section id="article" class="departments">
+      <div class="container">
+
+        <div class="section-title">
+          <h1>"</h1>
+          <h2>Cataract Classifier</h2>
+          <div>
+            <div><img src="/static/assets/img/example3.jpg" id="output"></div>
+            <br>
+          <div class="d-flex justify-content-center">
+              <p class="justify">Upload your eye based on this image requirements : <br>1.Make sure the pupil area is cropped the same way as the example and visible(5%-24% of the total image area)<br>
+                2.Related to rule number 1,adjust your camera between 5-10 cm from the eye<br>
+                3.Make sure the image is at least 270x180 Pixel<br>
+                4.Make sure the image is not blurry/noisy<br>
+                5.(Max image size: 2 MB)</p>
+            </div>
+        </div>
+      </div>
+        <div class="container">
+          <!-- <form>   -->
+
+                  <!-- <p>Blurry Vision :
+                  <input type="radio" id="male" name="blurry" value=1>
+                  <label for="male">yes </label>
+                  <input type="radio" id="female" name="blurry" value=1>
+                  <label for="female">no</label></p>
+                  <p>Seeing double :
+                  <input type="radio" id="male" name="double" value=1>
+                  <label for="male">yes </label>
+                  <input type="radio" id="female" name="double" value=1>
+                  <label for="female">no</label></p>
+                  <p>Sensitive to light :
+                  <input type="radio" id="male" name="sensitive" value=1>
+                  <label for="male">yes </label>
+                  <input type="radio" id="female" name="sensitive" value=1>
+                  <label for="female">no</label></p>
+                  <p>Trouble seeing well at night :
+                  <input type="radio" id="male" name="trouble" value=1>
+                  <label for="male">yes </label>
+                  <input type="radio" id="female" name="trouble" value=1>
+                  <label for="female">no</label></p>
+                  <p>Seeing bright colors as faded or yellow instead :
+                  <input type="radio" id="male" name="faded" value=1>
+                  <label for="male">yes </label>
+                  <input type="radio" id="female" name="faded" value=1>
+                  <label for="female">no</label></p> -->
+          <!-- </form> -->
+          <div class="center">
+            <form method=post enctype=multipart/form-data>
+              <!-- <input type=file name=file onchange="loadFile(event)"> -->
+              <!-- <p>Please specify your symtomps : <br><textarea name=anamnesis  id="anamnesis"></textarea></p> -->
+              <input type=file name=file  id="upload_image" />
+              <input type=text name=xc  id="xcc" value="<vxc>" style="display: none" onchange="change_xc(this)"/>
+              <input type=text name=yc  id="ycc" value="<vyc>" style="display: none" onchange="change_yc(this)"/>
+              <input type=text name=wc  id="wcc" value="<vwc>" style="display: none" onchange="change_wc(this)"/>
+              <input type=text name=hc  id="hcc" value="<vhc>" style="display: none" onchange="change_hc(this)"/>
+
+
+               <input type=submit value=Upload class="btn btn-primary">
+            </form>
+            <!-- <img id="output" alt="" width="40%" height="40%" /> -->
+          </div>
+
+        </div>
+
+       {% if data %}
+       <div class="container">
+          <img src="{{ data.processed_img }}" alt="" width="480px" height="360px">
+          <img src="{{ data.uploaded_img }}" alt="" width="480px" height="360px">   
+       </div>
+       {% endif %}
+
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Crop Image Before Upload</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">×</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="img-container">
+                      <div>
+                          <div>
+                              <img src="" id="sample_image"/>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="crop" class="btn btn-primary">Crop</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+          </div>
+      </div>
+      </div>
+    </section><!-- End Upload Section -->
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ECDS</h3>
+            <p>
+              Electronic Engineering Polytechnic Institute of Surabaya, Indonesia
+          </div>
+        </div>
+
+      </div>    
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ECDS</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a>ECDS Team</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://web.facebook.com/Early-Cataract-Detection-System-ECDS-100939092238938"  target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/ycc.community/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+  <script src="/static/assets/js/submission.js"></script>
+
+</body>
+
+</html>
+<script>
+function change_xc(t){
+  var url = "/updata_xc";
+  var data = {text : $('#xcc').val()};
+  $.post(url,data);
+  console.log("data");
+}
+function change_yc(t){
+  var url = "/updata_yc";
+  var data = {text : $('#ycc').val()};
+  $.post(url,data);
+  console.log("data");
+}
+function change_wc(t){
+  var url = "/updata_wc";
+  var data = {text : $('#wcc').val()};
+  $.post(url,"data");
+}
+function change_hc(t){
+  var url = "/updata_hc";
+  var data = {text : $('#hcc').val()};
+  $.post(url,data);
+  console.log("data");
+}
+$(document).ready(function(){
+
+  var $modal = $('#modal');
+
+  var urlim = document.getElementById('sample_image');
+  var image = document.getElementById('output');
+
+  var xc = document.getElementById('xcc');
+  var yc = document.getElementById('ycc');
+  var wc = document.getElementById('wcc');
+  var hc = document.getElementById('hcc');
+
+  var cropper;
+
+  $('#upload_image').change(function(event){
+    var files = event.target.files;
+
+    var done = function(url){
+      urlim.src = url;
+      $modal.modal('show');
+    };
+
+    if(files && files.length > 0)
+    {
+      reader = new FileReader();
+      reader.onload = function(event)
+      {
+        done(reader.result);
+      };
+      reader.readAsDataURL(files[0]);
+    }
+  });
+
+  $modal.on('shown.bs.modal', function() {
+    cropper = new Cropper(urlim, {
+      aspectRatio: 1,
+      viewMode: 1,
+      preview:'.preview',
+      crop: function(event) {
+        xc.value = event.detail.x;
+        yc.value = event.detail.y;
+        wc.value = event.detail.width;
+        hc.value = event.detail.height;
+    // console.log(event.detail.x);
+    // console.log(event.detail.y);
+    // console.log(event.detail.width);
+    // console.log(event.detail.height);
+    // console.log(event.detail.rotate);
+    // console.log(event.detail.scaleX);
+    // console.log(event.detail.scaleY);
+  }
+    });
+  }).on('hidden.bs.modal', function(){
+    cropper.destroy();
+      cropper = null;
+  });
+
+  $('#crop').click(function(){
+    canvas = cropper.getCroppedCanvas({
+      width:400,
+      height:400
+    });
+
+    canvas.toBlob(function(blob){
+      image.src = URL.createObjectURL(blob);
+      
+      $modal.modal('hide');
+      // var reader = new FileReader();
+      // reader.readAsDataURL(blob);
+      // reader.onloadend = function(){
+      //   var base64data = reader.result;
+      //   $.ajax({
+      //     url:'upload.php',
+      //     method:'POST',
+      //     data:{image:base64data},
+      //     success:function(data)
+      //     {
+      //       $('#uploaded_image').attr('src', data);
+      //     }
+      //   });
+      // };
+    });
+  });
+  
+});
+</script>

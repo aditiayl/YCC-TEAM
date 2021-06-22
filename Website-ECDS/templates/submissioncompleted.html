@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ECDS - Result</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link  rel="icon" media="all" href="{{ url_for('static', filename='assets/img/logo.png')}}">
+  <link rel="panoptes-icon" media="all" href="{{ url_for('static', filename='assets/img/panoptesapple-touch-icon.png')}}">
+
+ 
+  <link href="{{font_url}}" rel="stylesheet"/>
+
+  <!-- Vendor CSS Files -->
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/icofont/icofont.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/venobox/venobox.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/animate.css/animate.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/remixicon/remixicon.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/owl.carousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link type="text/css" href="{{ url_for('static', filename='assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker.min.css')}}" rel="stylesheet">
+  
+  <!-- Template Main CSS File -->
+  <!--<link href="assets/css/style.css" rel="stylesheet">-->
+<link href="{{ url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+<style type="text/css">
+  
+  img {
+  max-width: 100%;
+  height: auto;
+}
+
+</style>
+  
+</head>
+
+<body>
+<!--   {% with messages = get_flashed_messages() %}
+   {% if messages %}
+   <ul class=flashes>
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+   </ul>
+   {% endif %}
+   {% endwith %} -->
+
+  <!-- ======= Top Bar ======= -->
+  <div id="topbar" class="d-none d-lg-flex align-items-center fixed-top">
+    <div class="container d-flex">
+      <div class="contact-info mr-auto">
+        <i class="icofont-envelope"></i> <a href="mailto:ecds.id@gmail.com">ecds.id@gmail.com</a>
+        <i class="icofont-phone"></i> +62 821-1517-8793
+        <i class="icofont-google-map"></i> Electronic Engineering Polytechnic Institute of Surabaya
+      </div>
+      <div class="social-links">
+        <a href="https://web.facebook.com/Early-Cataract-Detection-System-ECDS-100939092238938"target="_blank" class="facebook"><i class="icofont-facebook"></i></a>
+        <a href="https://www.instagram.com/ycc.community/" target="_blank" class="instagram"><i class="icofont-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center">
+
+      <h1 class="logo mr-auto"><a href="/"><img src="/static/assets/img/logoblack-ecds.png"></a></h1> 
+      <nav class="nav-menu d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/">Home</a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Upload Section ======= -->
+    <section id="article" class="departments">
+      <div class="container">
+
+        <div class="section-title">
+          <h1>"</h1>
+          <h2>Eye Check Result</h2>
+
+       {% if data %}
+       <div class="container">
+          <img src="{{ data.processed_img }}" alt="" width="480px" height="360px">
+          <!-- <img src="{{ data.uploaded_img }}" alt="" width="480px" height="360px">    -->
+       </div>
+       {% endif %}
+       <br><br>
+       <div class="container">
+        {% with messages = get_flashed_messages(category_filter=["class"]) %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                <li class="justify">Classification :  {{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+      <br>
+      <div class="container">
+        {% with messages = get_flashed_messages(category_filter=["imgquality"]) %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                <li class="justify">Image Quality :  {{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+      <br>
+       <div class="container">
+        {% with messages = get_flashed_messages(category_filter=["medadvice"]) %}
+          {% if messages %}
+            <ul class=flashes>
+              {% for message in messages %}
+                <li class="justify">Medical Advice : {{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+      </div>
+
+      </div>
+    </div>
+    </section><!-- End Upload Section -->
+
+
+       <!-- ======= Appointment Section ======= -->
+<!-- End Departments Section -->
+
+         <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Ophthalmologist Recommendation</h2>
+          <p>For further medical advice, you can consult an ophthalmologist directly via online meet without the need to leave your house.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/doctors/doctors-1.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>dr. Trianggadewi</h4>
+                <span>Jombang Islamic Hospital</span>
+                <p>Jl. Brigjen Kretarto No.22a, Sambong Dukuh, Kec. Jombang, Kabupaten Jombang, Jawa Timur 61413</p>
+                <div class="social">
+                  <a href="https://www.instagram.com/doktermatadewi/" target="_blank"><i class="ri-instagram-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4 mt-lg-0">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/doctors/doctors-2.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4> dr. Saraswati</h4>
+                <span>Husada Utama Hospital</span>
+                <p>Jl. Mayjen Prof. Dr. Moestopo No.31-35, Pacar Keling, Kec. Tambaksari, Kota SBY, Jawa Timur 60131</p>
+                <div class="social">
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/doctors/doctors-3.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>dr. Firdaus Maulana</h4>
+                <span>Premier Surabaya Hospital</span>
+                <p>Jl. Nginden Intan Barat No.B, Ngenden Jangkungan, Kec. Sukolilo, Kota SBY, Jawa Timur 60118</p>
+                <div class="social">
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6 mt-4">
+            <div class="member d-flex align-items-start">
+              <div class="pic"><img src="/static/assets/img/doctors/doctors-4.jpg" class="img-fluid" alt=""></div>
+              <div class="member-info">
+                <h4>dr. Ummu Amira</h4>
+                <span>Surabaya General Hospital</span>
+                <p>Jl. Mayjen Prof. Dr. Moestopo No.6-8, Airlangga, Kec. Gubeng, Kota SBY, Jawa Timur 60286</p>
+                <div class="social">
+                  <a href=""><i class="ri-instagram-fill"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Doctors Section -->
+
+    <!-- ======= Appointment Section ======= -->
+    <section id="appointment" class="appointment section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Make an Appointment</h2>
+          <p>Fill out the form below to consult with an ophthalmologist at the agreed time.</p>
+        </div>
+
+        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
+          <div class="row">
+            <div class="col-md-4 form-group">
+              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3 mt-md-0">
+              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <input type="datetime" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" data-rule="minlen:4" data-msg="Please enter at least 4 chars">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="department" id="department" class="form-select">
+                <option value="">Session Length</option>
+                <option value="Department 1">60 minutes</option>
+                <option value="Department 2">90 minutes</option>
+                <option value="Department 3">120 minutes</option>
+              </select>
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+              <select name="doctor" id="doctor" class="form-select">
+                <option value="">Select Doctor</option>
+                <option value="Doctor 1">dr. Trianggadewi</option>
+                <option value="Doctor 2">Doctor 2</option>
+                <option value="Doctor 3">Doctor 3</option>
+              </select>
+              <div class="validate"></div>
+            </div>
+          </div>
+
+          <div class="form-group mt-3">
+            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
+            <div class="validate"></div>
+          </div>
+          <div class="mb-3">
+            <div class="loading">Loading</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
+          </div>
+          <div class="text-center"><button type="submit">Make an Appointment</button></div>
+        </form>
+
+      </div>
+    </section><!-- End Appointment Section -->
+
+
+
+    <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>ECDS</h3>
+            <p>
+              Electronic Engineering Polytechnic Institute of Surabaya, Indonesia
+          </div>
+        </div>
+
+      </div>    
+    <div class="container d-md-flex py-4">
+
+      <div class="mr-md-auto text-center text-md-left">
+        <div class="copyright">
+          &copy; Copyright <strong><span>ECDS</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          Designed by <a>ECDS Team</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="https://web.facebook.com/Early-Cataract-Detection-System-ECDS-100939092238938" target="_blank" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="https://www.instagram.com/ycc.community/" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="/static/assets/vendor/jquery/jquery.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/static/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="/static/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/static/assets/vendor/venobox/venobox.min.js"></script>
+  <script src="/static/assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="/static/assets/vendor/counterup/counterup.min.js"></script>
+  <script src="/static/assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="/static/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="/static/assets/js/main.js"></script>
+  <script src="/static/assets/js/submission.js"></script>
+
+</body>
+
+</html>
